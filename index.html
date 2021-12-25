@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <style>
+        *{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+main{
+    height: 100vh;
+    width: 100vw;
+    background-color: cadetblue;
+    background: linear-gradient(15deg, #848482 30%, #b0c4de 70%);
+    display: grid;
+    place-items: center;
+}
+.box{
+    height: 320px;
+    width: 320px;
+    background-color: #141f23;
+    position: relative;
+    border-bottom: 10px solid #141f23;
+    box-shadow: 0 0 0.75vmin 0.75vmin #1115;
+}
+.face{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 200px;
+    height: 250px;
+    transform: translate(-50%, -40%);
+    background:linear-gradient(0deg, #78c800 20%, #a56644 20%, #a56644 70%, #78c800 30%);
+    border-radius:80px 80px 15px 15px;
+}
+.face::before{
+    content: "";
+    position: absolute;
+    top: 22%;
+    left: 0%;
+    transform: translateX(-10%);
+    height: 20px;
+    width: 100%;
+    background-color: #58a700;
+    border-radius: 10px 20px 0 10px;
+    z-index:5;
+}
+.face::after{
+    content: "";
+    position: absolute;
+    top: 0%;
+    left: 50%;
+    transform: translate(-50%, -70%);
+    height: 15px;
+    width: 40px;
+    background-color: #58a700;
+    border-radius: 10px;
+}
+.pseudobox{
+    width: 50px;
+    height: 40px;
+    background-color: #61341c;
+}
+.pl::before{
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 5px;
+    width: 50px;
+    height: 40px;
+    background-color: #a56644;
+    border-radius: 70px 0 0 0px;
+}
+.pl{
+    position: absolute;
+    top: 30%;
+    left: 0;
+}
+.pr{
+    position: absolute;
+    top: 30%;
+    right: 0;
+}
+.pr::before{
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 5px;
+    width: 50px;
+    height: 40px;
+    background-color: #a56644;
+    border-radius: 0 70px 0 0px;
+}
+.ear{
+    position: absolute;
+    top: 45%;
+    left: 50%;
+    transform: translateX(-50%);
+    height: 40px;
+    width: 120%;
+    background-color: #a56644;
+    border-radius: 150px;
+}
+.eye{
+    width: 45px;
+    height: 50px;
+    background-color: #fdfdfd;
+    border-radius: 5px 5px 20px 20px;
+    overflow: hidden;
+}
+.el{
+    position: absolute;
+    top:70px;
+    left: 50%;
+    transform: translateX(-120%);
+}
+.er{
+    position: absolute;
+    top:70px;
+    right: 50%;
+    transform: translateX(120%);
+}
+.eball{
+    position: absolute;
+    top: 0%;
+    /* left: 50%; */
+    transform: translate(-50%, -20%);
+    background-color: #3d3d3d;
+    height: 45px;
+    width: 25px;
+    border-radius: 20px;
+}
+.el .eball{
+    right: 0%;
+    transform: translate(-25%, -20%);
+}
+.er .eball{
+    left: 0%;
+    transform: translate(25%, -20%);
+}
+.nose{
+    display: inline-block;
+    background-color: #8d4d2b;
+    width: 30px;
+    height:25px;
+    border-radius: 50%;
+    position: absolute;
+    top: 55%;
+    left: 50%;
+    transform: translate(-50%, -90%);
+}
+.nose::before{
+    content: "";
+    position: absolute;
+    top: -25px;
+    left: 50%;
+    border: 15px solid transparent;
+    border-bottom: 20px solid #8d4d2b;
+    transform: translateX(-50%);
+}
+.nose::after{
+    content: "";
+    position: absolute;
+    top: 25px;
+    right: 50%; 
+    width: 30px;
+    height:25px;
+    transform: translate(100%, -25%) rotate(-15deg);
+    border-radius: 50%;
+    border-bottom: 10px solid #fdfdfd;
+}
+.shirt{
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #78c800;
+    width: 120%;
+    height: 20%;
+    border-radius: 10px;
+}
+.shirt::before{
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    height: 25px;
+    width: 25px;
+    border-radius: 50%;
+    background-color: #58a700;
+}
+    </style>
+    <main>
+        <div class="box">
+            <div class="face">
+                <div class="pseudobox pl"></div>
+                <div class="pseudobox pr"></div>
+                <div class="ear"></div>
+                <div class="eye el">
+                    <div class="eball"></div>
+                </div>
+                <div class="eye er">
+                    <div class="eball"></div>
+                </div>
+                <div class="nose"></div>
+                <div class="shirt"></div>
+            </div>
+        </div>
+    </main>
+</body>
+</html>
